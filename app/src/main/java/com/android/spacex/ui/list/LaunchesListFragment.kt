@@ -82,6 +82,11 @@ class LaunchesListFragment : Fragment() {
             layoutManager =
                 LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
         }
+        binding.imgFilter.setOnClickListener {
+            val dialogYears =
+                DialogYearsFragment.newInstance(viewModel.launchesYear as ArrayList<String>)
+            dialogYears.show(childFragmentManager, null)
+        }
 
         binding.swipeRefreshLayout.setOnRefreshListener {
             viewModel.getLaunchesList()

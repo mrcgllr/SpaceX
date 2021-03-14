@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.android.spacex.model.LaunchUiModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="16dp">
+
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/imgLaunchPatch"
+                bind_image_url="@{model.missionPatchi}"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearance="@style/ShapeableImageView.Radius10" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtLaunchName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:drawableStart="@drawable/ic_mission"
+                android:drawablePadding="8dp"
+                android:singleLine="true"
+                android:text="@{model.missionName}"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+                android:textColor="@color/launchDetailTextColor"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imgLaunchPatch" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/titleCompany"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:drawableStart="@drawable/ic_enterprise"
+                android:drawablePadding="8dp"
+                android:singleLine="true"
+                android:text="@string/rocket_name"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
+                android:textColor="@color/launchDetailTextColor"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtLaunchName" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtRocketName"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="16dp"
+                android:singleLine="true"
+                android:text="@{model.rocketName}"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
+                android:textColor="@color/launchDetailTextColor"
+                android:textStyle="normal"
+                app:layout_constraintBottom_toBottomOf="@+id/titleCompany"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@id/titleCompany"
+                app:layout_constraintTop_toTopOf="@id/titleCompany"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/titleLaunchDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:drawableStart="@drawable/ic_year"
+                android:drawablePadding="8dp"
+                android:singleLine="true"
+                android:text="@string/launch_date"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
+                android:textColor="@color/launchDetailTextColor"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/titleCompany" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtLaunchDate"
+                convert_date="@{model.launchDate}"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="16dp"
+                android:singleLine="true"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
+                android:textColor="@color/launchDetailTextColor"
+                android:textStyle="normal"
+                app:layout_constraintBottom_toBottomOf="@+id/titleLaunchDate"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/txtRocketName"
+                app:layout_constraintTop_toTopOf="@id/titleLaunchDate" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/titleLaunchSite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:drawableStart="@drawable/ic_site"
+                android:drawablePadding="8dp"
+                android:singleLine="true"
+                android:text="@string/site_name"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
+                android:textColor="@color/launchDetailTextColor"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/titleLaunchDate" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtLaunchSite"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="16dp"
+                android:singleLine="true"
+                android:text="@{model.siteName}"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
+                android:textColor="@color/launchDetailTextColor"
+                android:textStyle="normal"
+                app:layout_constraintBottom_toBottomOf="@+id/titleLaunchSite"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/txtRocketName"
+                app:layout_constraintTop_toTopOf="@id/titleLaunchSite" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/titleDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="16dp"
+                android:text="@string/description"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                android:textColor="@color/launchDetailTextColor"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/titleLaunchSite" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtLaunchDescription"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="16dp"
+                android:text="@{model.description}"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
+                android:textColor="@color/launchDetailTextColor"
+                android:textStyle="normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/titleDescription" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+</layout>
