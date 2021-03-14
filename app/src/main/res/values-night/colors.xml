@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="backgroundColor">#1D1D27</color>
+    <color name="cardBackgroundColor">#272733</color>
+    <color name="launchListTextColor">#FFFFFF</color>
+    <color name="launchDetailTextColor">#000000</color>
+</resources>

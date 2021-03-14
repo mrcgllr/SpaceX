@@ -7,4 +7,9 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="backgroundColor">#D2E1FF</color>
+    <color name="cardBackgroundColor">#EDF2FD</color>
+    <color name="launchListTextColor">#000000</color>
+    <color name="launchDetailTextColor">#000000</color>
 </resources>

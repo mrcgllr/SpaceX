@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/launchesListFragment">
+
+    <fragment
+        android:id="@+id/launchDetailFragment"
+        android:name="com.android.spacex.ui.detail.LaunchDetailFragment"
+        android:label="LaunchesDetailFragment"
+        tools:layout="@layout/fragment_launch_detail">
+        <argument
+            android:name="launchModel"
+            app:argType="com.android.spacex.model.LaunchUiModel" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/launchesListFragment"
+        android:name="com.android.spacex.ui.list.LaunchesListFragment"
+        android:label="LaunchesListFragment"
+        tools:layout="@layout/fragment_launches_list">
+        <action
+            android:id="@+id/action_launchesListFragment_to_launchDetailFragment"
+            app:destination="@id/launchDetailFragment" />
+    </fragment>
+</navigation>
