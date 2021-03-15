@@ -10,6 +10,7 @@
         android:id="@+id/itemContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/backgroundColor"
         android:padding="4dp">
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -17,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@{model}"
-            android:textColor="@color/black"
+            android:textColor="@color/dialogYearTextColor"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6" />
 
     </FrameLayout>

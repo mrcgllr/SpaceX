@@ -5,7 +5,7 @@
     <com.google.android.material.card.MaterialCardView
         android:layout_width="150dp"
         android:layout_height="150dp"
-        app:cardBackgroundColor="@color/cardBackgroundColor"
+        app:cardBackgroundColor="@color/backgroundColor"
         app:cardCornerRadius="8dp">
 
         <LinearLayout
@@ -21,7 +21,7 @@
                 android:gravity="end"
                 android:text="@string/clear_filter"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
-                android:textColor="@color/black" />
+                android:textColor="@color/clearFilterTextColor" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerYears"
