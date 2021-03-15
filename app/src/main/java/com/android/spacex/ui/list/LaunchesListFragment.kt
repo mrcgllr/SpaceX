@@ -18,6 +18,7 @@ import com.android.spacex.ui.list.dialog.DialogYearsFragment
 import com.android.spacex.util.Util.BUN_ITEM_CLEAR
 import com.android.spacex.util.Util.BUN_ITEM_YEAR
 import com.android.spacex.util.Util.REQ_KEY
+import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -74,6 +75,13 @@ class LaunchesListFragment : Fragment() {
             }
         })
 
+        viewModel.progressBar.observe(viewLifecycleOwner, { isProgress ->
+            binding.isProgress = isProgress
+        })
+
+        viewModel.snackBar.observe(viewLifecycleOwner, { exception ->
+            Snackbar.make(binding.root, exception, Snackbar.LENGTH_SHORT).show()
+        })
         viewModel.getLaunchesList()
     }
 

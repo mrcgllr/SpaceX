@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="backgroundColor">#191919</color>
+    <color name="bottomSheetDialogBackgroundColor">#373737</color>
     <color name="statusBarColor">#191919</color>
     <color name="cardBackgroundColor">#242A37</color>
     <color name="launchListTextColor">#FFFFFF</color>

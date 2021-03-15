@@ -23,13 +23,22 @@ class LaunchesListViewModel @Inject constructor(private val useCase: LaunchUseCa
     private var _launchesYear: List<String> = ArrayList()
     val launchesYear: List<String> get() = _launchesYear
 
+    private val _snackBar: MutableLiveData<String> = MutableLiveData()
+    val snackBar get() = _snackBar
+
+    private val _progressBar: MutableLiveData<Boolean> = MutableLiveData()
+    val progressBar get() = _progressBar
+
     fun getLaunchesList() = viewModelScope.launch {
         try {
+            _progressBar.value = true
             val data = useCase.getLaunchesList()
             _launchesListLD.value = data
             getLaunchesYear(data)
         } catch (exception: Exception) {
-
+            _snackBar.value = exception.localizedMessage
+        } finally {
+            _progressBar.value = false
         }
 
     }
