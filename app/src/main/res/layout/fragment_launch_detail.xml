@@ -11,8 +11,9 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/backgroundColor">
+        android:layout_height="wrap_content"
+        android:background="@color/bottomSheetDialogBackgroundColor"
+        app:layout_behavior="@string/bottom_sheet_behavior">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -20,7 +21,7 @@
             android:paddingBottom="16dp">
 
 
-            <com.google.android.material.imageview.ShapeableImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/imgLaunchPatch"
                 bind_image_url="@{model.missionPatch}"
                 android:layout_width="match_parent"
@@ -29,8 +30,7 @@
                 android:layout_marginBottom="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:shapeAppearance="@style/ShapeableImageView.Radius10" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/txtLaunchName"

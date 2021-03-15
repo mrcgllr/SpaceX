@@ -5,15 +5,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import com.android.spacex.R
 import com.android.spacex.databinding.FragmentLaunchDetailBinding
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class LaunchDetailFragment : Fragment() {
+class LaunchDetailFragment : BottomSheetDialogFragment() {
 
     private var _binding: FragmentLaunchDetailBinding? = null
     private val binding get() = _binding!!

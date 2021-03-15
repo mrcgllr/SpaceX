@@ -5,7 +5,7 @@
     android:id="@+id/nav_graph"
     app:startDestination="@id/launchesListFragment">
 
-    <fragment
+    <dialog
         android:id="@+id/launchDetailFragment"
         android:name="com.android.spacex.ui.detail.LaunchDetailFragment"
         android:label="LaunchesDetailFragment"
@@ -13,7 +13,7 @@
         <argument
             android:name="launchModel"
             app:argType="com.android.spacex.model.LaunchUiModel" />
-    </fragment>
+    </dialog>
 
     <fragment
         android:id="@+id/launchesListFragment"
