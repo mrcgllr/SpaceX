@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.android.spacex.model.LaunchUiModel
 import com.android.spacex.usecase.LaunchUseCase
+import com.android.spacex.util.forceRefresh
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -23,9 +24,14 @@ class LaunchesListViewModel @Inject constructor(private val useCase: LaunchUseCa
     val launchesYear: List<String> get() = _launchesYear
 
     fun getLaunchesList() = viewModelScope.launch {
-        val data = useCase.getLaunchesList()
-        _launchesListLD.value = data
-        getLaunchesYear(data)
+        try {
+            val data = useCase.getLaunchesList()
+            _launchesListLD.value = data
+            getLaunchesYear(data)
+        } catch (exception: Exception) {
+
+        }
+
     }
 
     private fun getLaunchesYear(list: List<LaunchUiModel>) = viewModelScope.launch {
@@ -38,6 +44,10 @@ class LaunchesListViewModel @Inject constructor(private val useCase: LaunchUseCa
         _launchesFilterList.value = launchesListLD.value?.filter { data ->
             data.launchYear == year
         }
+    }
+
+    fun selectedClear() = viewModelScope.launch {
+        _launchesListLD.forceRefresh()
     }
 
 }

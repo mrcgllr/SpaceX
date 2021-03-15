@@ -10,10 +10,12 @@ import androidx.fragment.app.setFragmentResultListener
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.android.spacex.FilterType
 import com.android.spacex.R
 import com.android.spacex.databinding.FragmentLaunchesListBinding
 import com.android.spacex.ui.adapter.LaunchListAdapter
 import com.android.spacex.ui.list.dialog.DialogYearsFragment
+import com.android.spacex.util.Util.BUN_ITEM_CLEAR
 import com.android.spacex.util.Util.BUN_ITEM_YEAR
 import com.android.spacex.util.Util.REQ_KEY
 import dagger.hilt.android.AndroidEntryPoint
@@ -46,6 +48,12 @@ class LaunchesListFragment : Fragment() {
             val year = resultBundle.getString(BUN_ITEM_YEAR)
             year?.let {
                 viewModel.setSelectedYear(it)
+            }
+            val clearType = resultBundle.getParcelable<FilterType>(BUN_ITEM_CLEAR)
+            clearType?.let {
+                if (it == FilterType.CLEAR) {
+                    viewModel.selectedClear()
+                }
             }
         }
     }

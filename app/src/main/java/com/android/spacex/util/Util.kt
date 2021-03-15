@@ -6,4 +6,5 @@ object Util {
 
     const val REQ_KEY = "requestKey"
     const val BUN_ITEM_YEAR = "bundle_item_year"
+    const val BUN_ITEM_CLEAR = "bundle_item_clear"
 }

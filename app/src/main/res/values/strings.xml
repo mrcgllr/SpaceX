@@ -6,4 +6,5 @@
     <string name="description">Description</string>
     <string name="site_name">Site Name: </string>
     <string name="launches_list">Launches List</string>
+    <string name="clear_filter">Clear Filter</string>
 </resources>

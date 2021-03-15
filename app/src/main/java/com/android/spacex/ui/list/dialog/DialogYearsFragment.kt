@@ -10,10 +10,12 @@ import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.setFragmentResult
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.android.spacex.FilterType
 import com.android.spacex.R
 import com.android.spacex.databinding.DialogYearsBinding
 import com.android.spacex.ui.list.LaunchesListFragment
 import com.android.spacex.ui.list.dialog.adapter.YearsAdapter
+import com.android.spacex.util.Util.BUN_ITEM_CLEAR
 import com.android.spacex.util.Util.BUN_ITEM_YEAR
 import com.android.spacex.util.Util.REQ_KEY
 import dagger.hilt.android.AndroidEntryPoint
@@ -64,6 +66,13 @@ class DialogYearsFragment : DialogFragment() {
             adapter = adapterYears
             layoutManager =
                 LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
+        }
+        binding.txtClearSelect.setOnClickListener {
+            (parentFragment as LaunchesListFragment).setFragmentResult(
+                REQ_KEY,
+                bundleOf(BUN_ITEM_CLEAR to FilterType.CLEAR)
+            )
+            dialog?.dismiss()
         }
     }
 
