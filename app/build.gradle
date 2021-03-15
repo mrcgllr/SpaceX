@@ -8,17 +8,17 @@ plugins {
 }
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion "30.0.3"
+    compileSdkVersion Configs.compileSdk
+    buildToolsVersion Configs.buildToolsVersion
 
     defaultConfig {
-        applicationId "com.android.spacex"
-        minSdkVersion 23
-        targetSdkVersion 30
-        versionCode 1
-        versionName "1.0"
+        applicationId Configs.applicationId
+        minSdkVersion Configs.minSdk
+        targetSdkVersion Configs.targetSdk
+        versionCode Configs.versionCode
+        versionName Configs.versionName
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner Configs.androidTestInstrumentation
     }
 
     buildTypes {
@@ -42,49 +42,49 @@ android {
 
 dependencies {
 
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation Dependencies.kotlinStdLib
+    testImplementation Dependencies.junit
+    androidTestImplementation Dependencies.extJUnit
+    androidTestImplementation Dependencies.espressoCore
 
-    implementation "androidx.core:core-ktx:$core_ktx_version"
-    implementation "androidx.appcompat:appcompat:$appcompat_version"
-    implementation "androidx.constraintlayout:constraintlayout:$constraint_version"
-    implementation "androidx.swiperefreshlayout:swiperefreshlayout:$swipe_refresh_layout_version"
-    implementation "androidx.fragment:fragment-ktx:$fragment_ktx"
+    implementation Dependencies.coreKtx
+    implementation  Dependencies.appcompat
+    implementation Dependencies.constraintLayout
+    implementation  Dependencies.swipeRefreshLayout
+    implementation  Dependencies.fragmentKtx
 
     //Retrofit
-    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
-    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
-    implementation "com.squareup.okhttp3:logging-interceptor:$okhttp_logging_version"
+    implementation  Dependencies.retrofit
+    implementation  Dependencies.gSonConverter
+    implementation  Dependencies.loggingInterceptor
 
     //Coroutines
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutine_version"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutine_version"
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation  Dependencies.coroutinesCore
+    implementation  Dependencies.coroutinesAndroid
+    implementation  Dependencies.kotlinStdLibJdk
 
     //Glide
-    implementation "com.github.bumptech.glide:glide:$glide_version"
-    kapt "com.github.bumptech.glide:compiler:$glide_version"
+    implementation  Dependencies.glide
+    kapt  Dependencies.glideCompiler
 
     //MVVM - LiveData
-    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
-    implementation "androidx.lifecycle:lifecycle-livedata-core-ktx:$lifecycle_version"
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
-    implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycle_version"
-    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
-    implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
+    implementation  Dependencies.lifeCycleLiveData
+    implementation  Dependencies.lifeCycleLiveDataCore
+    implementation  Dependencies.lifeCycleViewModel
+    implementation Dependencies.lifeCycleViewModelSavedState
+    implementation  Dependencies.lifeCycleRunTime
+    implementation  Dependencies.lifeCycleCommon
 
     //NAVIGATION
-    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
-    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+    implementation  Dependencies.navigationFragmentKtx
+    implementation  Dependencies.navigationUiKtx
 
     //MATERIAL DESIGN
-    implementation "com.google.android.material:material:$material_design_version"
+    implementation  Dependencies.materialDesign
 
     //Hilt
-    implementation "com.google.dagger:hilt-android:$hilt_version"
-    kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
-    kapt "androidx.hilt:hilt-compiler:$hilt_extensions_version"
-    implementation "androidx.hilt:hilt-lifecycle-viewmodel:$hilt_extensions_version"
+    implementation  Dependencies.hiltAndroid
+    kapt  Dependencies.hiltAndroidCompiler
+    kapt  Dependencies.hiltCompiler
+    implementation  Dependencies.hiltLifecycleViewModel
 }
