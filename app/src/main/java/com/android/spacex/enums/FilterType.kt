@@ -1,4 +1,4 @@
-package com.android.spacex
+package com.android.spacex.enums
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize

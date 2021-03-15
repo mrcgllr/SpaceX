@@ -10,7 +10,7 @@ import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.setFragmentResult
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.android.spacex.FilterType
+import com.android.spacex.enums.FilterType
 import com.android.spacex.R
 import com.android.spacex.databinding.DialogYearsBinding
 import com.android.spacex.ui.list.LaunchesListFragment

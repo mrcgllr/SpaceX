@@ -25,7 +25,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginEnd="16dp"
                 android:orientation="horizontal"
                 app:layout_scrollFlags="scroll|enterAlwaysCollapsed">
@@ -34,20 +34,21 @@
                     android:id="@+id/titleSpaceX"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
                     android:layout_weight="1"
                     android:text="@string/launches_list"
                     android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
                     android:textColor="@color/launchListTextColor"
-                    app:layout_anchor="@+id/appBarLayout"
-                    app:layout_anchorGravity="center" />
+                    app:layout_anchor="@+id/appBarLayout" />
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/imgFilter"
+                    bind_visible="@{!isProgress}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
                     android:clickable="true"
                     android:focusable="true"
-                    android:layout_gravity="bottom"
                     android:src="@drawable/ic_filter" />
 
             </LinearLayout>
@@ -69,7 +70,7 @@
 
         <ProgressBar
             android:id="@+id/progressBar"
-            bind_progress_visible="@{isProgress}"
+            bind_visible="@{isProgress}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center" />

@@ -10,7 +10,7 @@ import androidx.fragment.app.setFragmentResultListener
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.android.spacex.FilterType
+import com.android.spacex.enums.FilterType
 import com.android.spacex.R
 import com.android.spacex.databinding.FragmentLaunchesListBinding
 import com.android.spacex.ui.adapter.LaunchListAdapter
@@ -62,7 +62,6 @@ class LaunchesListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
         viewModel.launchesListLD.observe(viewLifecycleOwner, { list ->
             list?.let {
                 adapterLaunch.submitList(it)
@@ -108,6 +107,7 @@ class LaunchesListFragment : Fragment() {
             viewModel.getLaunchesList()
             binding.swipeRefreshLayout.isRefreshing = false
         }
+
     }
 
     override fun onDestroyView() {
