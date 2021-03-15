@@ -21,7 +21,7 @@
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/imgLaunchPatch"
-                bind_image_url="@{model.missionPatchi}"
+                bind_image_url="@{model.missionPatch}"
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
                 android:layout_marginTop="8dp"

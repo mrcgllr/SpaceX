@@ -5,6 +5,7 @@ import android.widget.ImageView
 import android.widget.ProgressBar
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.databinding.BindingAdapter
+import com.android.spacex.R
 import com.bumptech.glide.Glide
 import java.text.ParseException
 import java.text.SimpleDateFormat
@@ -18,6 +19,8 @@ object BindAdapter {
         if (!imageUrl.isNullOrEmpty())
             Glide.with(imageView.context)
                 .load(imageUrl)
+                .placeholder(R.drawable.ic_image_loading)
+                .error(R.drawable.ic_image_error)
                 .into(imageView)
     }
 
@@ -35,6 +38,7 @@ object BindAdapter {
             exception.printStackTrace()
         }
     }
+
     @JvmStatic
     @BindingAdapter("bind_progress_visible")
     fun bindProgressVisible(progressBar: ProgressBar, isProgress: Boolean) {
