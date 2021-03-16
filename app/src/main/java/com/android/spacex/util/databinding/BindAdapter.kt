@@ -2,7 +2,6 @@ package com.android.spacex.util.databinding
 
 import android.view.View
 import android.widget.ImageView
-import android.widget.ProgressBar
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.databinding.BindingAdapter
 import com.android.spacex.R

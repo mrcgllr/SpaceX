@@ -13,7 +13,10 @@
         android:roundIcon="@mipmap/logo_spacex"
         android:supportsRtl="true"
         android:theme="@style/Theme.SpaceX">
-        <activity android:name=".MainActivity">
+        <activity
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
