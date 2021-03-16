@@ -4,7 +4,7 @@
 
 
 
-#Application Architecture
+# Application Architecture
 - [MVVM](https://developer.android.com/jetpack/guide)
 
 # Technologies
